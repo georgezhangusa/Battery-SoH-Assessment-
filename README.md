@@ -1,0 +1,1 @@
+Interactive ML simulation platform modeling cell-level state-of-health (SoH), capacity fade trajectories, and cycle life degradation to optimize multi-year BESS augmentation schedules and financial pro formas.
