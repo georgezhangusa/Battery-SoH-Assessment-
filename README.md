@@ -1,2 +1,2 @@
 Interactive ML simulation platform that models cell-level state-of-health (SoH), capacity-fade trajectories, and cycle-life degradation to optimize multi-year BESS augmentation schedules and financial pro formas.
-Note: It is a demo. If you think it's interesting to turn it into a useful application, we can work together to make it happen. Please contact the author, George Zhang, by email: z_george@yahoo.com or reach me on LinkedIn: georgezhangusa
+Note: It is a demo. If you think it's worth turning into a useful application, we can work together to make it happen. Please contact the author, George Zhang, by email: z_george@yahoo.com or reach me on LinkedIn: georgezhangusa
