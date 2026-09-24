@@ -3,6 +3,7 @@ import {
   Zap,
   RefreshCw,
   HelpCircle,
+  BookOpen,
 } from 'lucide-react';
 import { PackAnalysis, DiagnosticResult } from '../types';
 import { useLanguage } from '../i18n/translations';
@@ -20,6 +21,7 @@ interface HeaderProps {
   onResetToBaseline?: () => void;
   onOpenPresets?: () => void;
   onOpenWelcome?: () => void;
+  onOpenReadme?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -28,6 +30,7 @@ export const Header: React.FC<HeaderProps> = ({
   hasPendingChanges,
   onRecalculate,
   onOpenWelcome,
+  onOpenReadme,
 }) => {
   const { t } = useLanguage();
 
@@ -85,16 +88,17 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           {/* Action Toolbar */}
-          <div className="flex items-center gap-2 flex-wrap">
+          <div className="flex items-center gap-2.5 flex-wrap">
             {/* Language Selector Button */}
             <LanguageSelector />
 
+            {/* Quick Start Guide 3D Button */}
             {onOpenWelcome && (
               <button
                 id="header-guide-button"
                 type="button"
                 onClick={onOpenWelcome}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-all cursor-pointer shadow-xs"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border-t border-t-slate-600/60 border-x border-slate-700 border-b-[3px] border-b-slate-950 shadow-[0_3px_0_0_#020617,0_3px_6px_rgba(0,0,0,0.35)] hover:-translate-y-0.5 active:translate-y-0.5 active:border-b-[1px] active:shadow-none transition-all duration-100 cursor-pointer select-none"
                 title={t('quickStartGuide')}
               >
                 <HelpCircle className="w-3.5 h-3.5 text-blue-400" />
@@ -102,21 +106,35 @@ export const Header: React.FC<HeaderProps> = ({
               </button>
             )}
 
-            {/* Primary RECALCULATE Button */}
+            {/* Primary RECALCULATE 3D Button */}
             <button
               id="header-recalculate-button"
               onClick={onRecalculate}
               disabled={isRecalculating}
-              className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all cursor-pointer shadow-md border ${
+              className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-100 cursor-pointer select-none hover:-translate-y-0.5 active:translate-y-0.5 active:border-b-[1px] active:shadow-none ${
                 hasPendingChanges
-                  ? 'bg-emerald-600 hover:bg-emerald-500 text-white border-emerald-400 ring-2 ring-emerald-400/50 animate-pulse'
-                  : 'bg-blue-600 hover:bg-blue-500 text-white border-blue-400/30'
+                  ? 'bg-emerald-600 hover:bg-emerald-500 text-white border-t border-t-emerald-300/50 border-x border-emerald-500 border-b-[3px] border-b-emerald-800 shadow-[0_3px_0_0_#064e3b,0_4px_12px_rgba(16,185,129,0.4)] ring-2 ring-emerald-400/60 animate-pulse'
+                  : 'bg-blue-600 hover:bg-blue-500 text-white border-t border-t-blue-300/40 border-x border-blue-500 border-b-[3px] border-b-blue-800 shadow-[0_3px_0_0_#1e3a8a,0_4px_10px_rgba(37,99,235,0.3)]'
               }`}
               title="Recalculate degradation, bottleneck, and RUL outputs based on adjusted sliders"
             >
               <RefreshCw className={`w-3.5 h-3.5 ${isRecalculating ? 'animate-spin' : ''}`} />
               <span>{isRecalculating ? t('recalculating') : t('recalculate')}</span>
             </button>
+
+            {/* README 3D Button (at right side) */}
+            {onOpenReadme && (
+              <button
+                id="header-readme-button"
+                type="button"
+                onClick={onOpenReadme}
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider bg-gradient-to-b from-indigo-600 to-indigo-700 hover:from-indigo-500 hover:to-indigo-600 text-white border-t border-t-indigo-300/50 border-x border-indigo-600 border-b-[3px] border-b-indigo-950 shadow-[0_3px_0_0_#1e1b4b,0_4px_10px_rgba(79,70,229,0.35)] hover:-translate-y-0.5 active:translate-y-0.5 active:border-b-[1px] active:shadow-none transition-all duration-100 cursor-pointer select-none"
+                title="View README & Author Details"
+              >
+                <BookOpen className="w-3.5 h-3.5 text-indigo-200" />
+                <span>README</span>
+              </button>
+            )}
           </div>
         </div>
       </div>

@@ -191,21 +191,21 @@ export const ExecutiveSummaryView: React.FC<ExecutiveSummaryViewProps> = ({
         </div>
 
         {/* Quick Action Toolbar */}
-        <div className="flex items-center gap-2 flex-wrap sm:justify-end">
+        <div className="flex items-center gap-2.5 flex-wrap sm:justify-end">
           <button
             type="button"
             onClick={() => window.print()}
-            className="px-3 py-1.5 rounded-xl text-sm font-semibold bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 transition-all flex items-center gap-1.5 shadow-2xs cursor-pointer"
+            className="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-white hover:bg-slate-50 text-slate-700 border-t border-t-white border-x border-slate-200 border-b-[3px] border-b-slate-400 shadow-[0_3px_0_0_#94a3b8,0_3px_6px_rgba(0,0,0,0.06)] hover:-translate-y-0.5 active:translate-y-0.5 active:border-b-[1px] active:shadow-none transition-all duration-100 flex items-center gap-1.5 cursor-pointer select-none"
             title="Print summary report"
           >
             <Printer className="w-4 h-4 text-slate-500" />
-            <span className="text-sm">{t('printReport')}</span>
+            <span>{t('printReport')}</span>
           </button>
 
           <button
             type="button"
             onClick={() => onOpenRepairModal(bottleneckModule.id)}
-            className="px-3 py-1.5 rounded-xl text-xs font-semibold bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 transition-all flex items-center gap-1.5 shadow-2xs cursor-pointer"
+            className="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-blue-50 hover:bg-blue-100 text-blue-700 border-t border-t-blue-100 border-x border-blue-200 border-b-[3px] border-b-blue-400 shadow-[0_3px_0_0_#60a5fa,0_3px_6px_rgba(59,130,246,0.15)] hover:-translate-y-0.5 active:translate-y-0.5 active:border-b-[1px] active:shadow-none transition-all duration-100 flex items-center gap-1.5 cursor-pointer select-none"
             title={t('simulateRepair')}
           >
             <Wrench className="w-3.5 h-3.5 text-blue-600" />
@@ -215,7 +215,7 @@ export const ExecutiveSummaryView: React.FC<ExecutiveSummaryViewProps> = ({
           <button
             type="button"
             onClick={onOpenWorkOrderModal}
-            className="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-900 hover:bg-slate-800 text-white transition-all flex items-center gap-1.5 shadow-xs cursor-pointer"
+            className="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-900 hover:bg-slate-800 text-white border-t border-t-slate-700 border-x border-slate-800 border-b-[3px] border-b-slate-950 shadow-[0_3px_0_0_#020617,0_4px_8px_rgba(15,23,42,0.3)] hover:-translate-y-0.5 active:translate-y-0.5 active:border-b-[1px] active:shadow-none transition-all duration-100 flex items-center gap-1.5 cursor-pointer select-none"
             title={t('generateWorkOrder')}
           >
             <FileText className="w-3.5 h-3.5" />
@@ -398,18 +398,18 @@ export const ExecutiveSummaryView: React.FC<ExecutiveSummaryViewProps> = ({
             <span className="text-slate-500">
               {t('testReplacingPrompt', { module: `${t('module')} #${bottleneckModule.id}` })}
             </span>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2.5">
               <button
                 type="button"
                 onClick={onSwitchToSimulator}
-                className="text-xs font-semibold text-slate-700 hover:text-slate-900 px-3 py-1.5 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer transition-colors"
+                className="text-xs font-bold text-slate-700 hover:text-slate-900 px-3.5 py-1.5 rounded-lg bg-white hover:bg-slate-50 border-t border-t-white border-x border-slate-200 border-b-[3px] border-b-slate-400 shadow-[0_2.5px_0_0_#94a3b8,0_2px_5px_rgba(0,0,0,0.05)] hover:-translate-y-0.5 active:translate-y-0.5 active:border-b-[1px] active:shadow-none cursor-pointer transition-all duration-100 select-none"
               >
                 {t('openSimulator')}
               </button>
               <button
                 type="button"
                 onClick={() => onOpenRepairModal(bottleneckModule.id)}
-                className="text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 px-3.5 py-1.5 rounded-lg shadow-2xs flex items-center gap-1.5 cursor-pointer transition-colors"
+                className="text-xs font-bold text-white bg-blue-600 hover:bg-blue-500 px-3.5 py-1.5 rounded-lg border-t border-t-blue-300/50 border-x border-blue-600 border-b-[3px] border-b-blue-900 shadow-[0_2.5px_0_0_#1e3a8a,0_3px_8px_rgba(37,99,235,0.3)] hover:-translate-y-0.5 active:translate-y-0.5 active:border-b-[1px] active:shadow-none flex items-center gap-1.5 cursor-pointer transition-all duration-100 select-none"
               >
                 <span>{t('launchWhatIf')}</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />

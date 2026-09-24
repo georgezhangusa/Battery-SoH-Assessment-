@@ -38,7 +38,7 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ variant = 'h
         id="language-switcher-btn"
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-all cursor-pointer shadow-xs focus:outline-none focus:ring-2 focus:ring-emerald-400/50"
+        className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border-t border-t-slate-600/60 border-x border-slate-700 border-b-[3px] border-b-slate-950 shadow-[0_3px_0_0_#020617,0_3px_6px_rgba(0,0,0,0.35)] hover:-translate-y-0.5 active:translate-y-0.5 active:border-b-[1px] active:shadow-none transition-all duration-100 cursor-pointer select-none focus:outline-none focus:ring-2 focus:ring-emerald-400/50"
         title={t('selectLanguage')}
         aria-haspopup="listbox"
         aria-expanded={isOpen}

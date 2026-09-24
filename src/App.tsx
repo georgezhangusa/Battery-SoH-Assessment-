@@ -33,6 +33,7 @@ import { RepairSimulatorModal } from './components/RepairSimulatorModal';
 import { WorkOrderModal } from './components/WorkOrderModal';
 import { PresetSelector } from './components/PresetSelector';
 import { WelcomeModal } from './components/WelcomeModal';
+import { ReadmeModal } from './components/ReadmeModal';
 import { ExecutiveSummaryView } from './components/ExecutiveSummaryView';
 
 export default function App() {
@@ -110,6 +111,7 @@ export default function App() {
   const [activeRepairModuleId, setActiveRepairModuleId] = useState<number | null>(null);
   const [isWorkOrderModalOpen, setIsWorkOrderModalOpen] = useState(false);
   const [isPresetModalOpen, setIsPresetModalOpen] = useState(false);
+  const [isReadmeModalOpen, setIsReadmeModalOpen] = useState(false);
   const [isWelcomeModalOpen, setIsWelcomeModalOpen] = useState<boolean>(() => {
     try {
       return !localStorage.getItem('bess_welcome_seen');
@@ -256,6 +258,7 @@ export default function App() {
         onResetToBaseline={handleSyncAllModulesToBaseline}
         onOpenPresets={() => setIsPresetModalOpen(true)}
         onOpenWelcome={() => setIsWelcomeModalOpen(true)}
+        onOpenReadme={() => setIsReadmeModalOpen(true)}
       />
 
       {/* Recalculation Notification Toast */}
@@ -439,6 +442,11 @@ export default function App() {
         isOpen={isWelcomeModalOpen}
         onClose={() => setIsWelcomeModalOpen(false)}
         onOpenPresets={() => setIsPresetModalOpen(true)}
+      />
+
+      <ReadmeModal
+        isOpen={isReadmeModalOpen}
+        onClose={() => setIsReadmeModalOpen(false)}
       />
     </div>
   );
