@@ -76,10 +76,10 @@ export const ModuleTopology: React.FC<ModuleTopologyProps> = ({
               id="sync-baseline-btn"
               type="button"
               onClick={onSyncAllModulesToBaseline}
-              className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer border flex items-center gap-1.5 shadow-2xs ${
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all duration-100 cursor-pointer flex items-center gap-1.5 select-none hover:-translate-y-0.5 active:translate-y-0.5 active:border-b-[1px] active:shadow-none ${
                 hasCustomModifiedModules
-                  ? 'bg-blue-600 text-white border-blue-600 hover:bg-blue-700 shadow-xs'
-                  : 'bg-slate-100 text-slate-700 hover:bg-slate-200 border-slate-200'
+                  ? 'bg-blue-600 hover:bg-blue-500 text-white border-t border-t-blue-300/40 border-x border-blue-600 border-b-[3px] border-b-blue-900 shadow-[0_3px_0_0_#1e3a8a,0_3px_6px_rgba(37,99,235,0.25)]'
+                  : 'bg-white hover:bg-slate-50 text-slate-700 border-t border-t-white border-x border-slate-200 border-b-[3px] border-b-slate-400 shadow-[0_3px_0_0_#94a3b8,0_2px_5px_rgba(0,0,0,0.05)]'
               }`}
               title="Reset all 8 modules to match the calculated baseline"
             >

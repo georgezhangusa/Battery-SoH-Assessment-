@@ -243,16 +243,16 @@ export const DiagnosticsPanel: React.FC<DiagnosticsPanelProps> = ({
       </div>
 
       {/* Bottom Action Toolbar: Presets, What-If Repair, and Work Order */}
-      <div className="flex items-center justify-end gap-2 pt-1.5 border-t border-slate-200/70 flex-wrap">
+      <div className="flex items-center justify-end gap-2.5 pt-2 border-t border-slate-200/70 flex-wrap">
         {onOpenPresets && (
           <button
             id="header-preset-button"
             type="button"
             onClick={onOpenPresets}
-            className="px-2.5 py-1 rounded-lg text-xs font-semibold bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 transition-all flex items-center gap-1 shadow-2xs cursor-pointer"
+            className="px-3 py-1.5 rounded-lg text-xs font-bold bg-white hover:bg-slate-50 text-indigo-900 border-t border-t-white border-x border-slate-200 border-b-[3px] border-b-indigo-300 shadow-[0_2.5px_0_0_#a5b4fc,0_2px_4px_rgba(99,102,241,0.1)] hover:-translate-y-0.5 active:translate-y-0.5 active:border-b-[1px] active:shadow-none transition-all duration-100 flex items-center gap-1.5 cursor-pointer select-none"
             title={t('loadTestPreset')}
           >
-            <Sparkles className="w-3.5 h-3.5 text-indigo-500" />
+            <Sparkles className="w-3.5 h-3.5 text-indigo-600" />
             <span>{t('presetsSubtitle')}</span>
           </button>
         )}
@@ -262,10 +262,10 @@ export const DiagnosticsPanel: React.FC<DiagnosticsPanelProps> = ({
             id="header-repair-sim-button"
             type="button"
             onClick={onOpenRepairModal}
-            className="px-2.5 py-1 rounded-lg text-xs font-semibold bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 transition-all flex items-center gap-1 shadow-2xs cursor-pointer"
+            className="px-3 py-1.5 rounded-lg text-xs font-bold bg-blue-50 hover:bg-blue-100 text-blue-700 border-t border-t-blue-100 border-x border-blue-200 border-b-[3px] border-b-blue-400 shadow-[0_2.5px_0_0_#60a5fa,0_2px_4px_rgba(59,130,246,0.15)] hover:-translate-y-0.5 active:translate-y-0.5 active:border-b-[1px] active:shadow-none transition-all duration-100 flex items-center gap-1.5 cursor-pointer select-none"
             title={t('simulateRepair')}
           >
-            <Wrench className="w-3.5 h-3.5 text-slate-600" />
+            <Wrench className="w-3.5 h-3.5 text-blue-600" />
             <span>{t('simulateRepair')}</span>
           </button>
         )}
@@ -275,10 +275,10 @@ export const DiagnosticsPanel: React.FC<DiagnosticsPanelProps> = ({
             id="header-work-order-button"
             type="button"
             onClick={onOpenWorkOrderModal}
-            className="px-2.5 py-1 rounded-lg text-xs font-semibold bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 transition-all flex items-center gap-1 shadow-2xs cursor-pointer"
+            className="px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-900 hover:bg-slate-800 text-white border-t border-t-slate-700 border-x border-slate-800 border-b-[3px] border-b-slate-950 shadow-[0_2.5px_0_0_#020617,0_3px_6px_rgba(15,23,42,0.25)] hover:-translate-y-0.5 active:translate-y-0.5 active:border-b-[1px] active:shadow-none transition-all duration-100 flex items-center gap-1.5 cursor-pointer select-none"
             title={t('generateWorkOrder')}
           >
-            <FileText className="w-3.5 h-3.5 text-slate-500" />
+            <FileText className="w-3.5 h-3.5 text-slate-300" />
             <span>{t('workOrder')}</span>
           </button>
         )}
